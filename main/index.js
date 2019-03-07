@@ -1,5 +1,10 @@
-import prueba from "./prueba";
+const express = require('express')
+const app = express()
+const {MongoClient} = require("./contrib/conections/mongoConnections");
+const port = 3000;
 
-console.log("hola mundo");
-
-new prueba();
+//Iniciar servidor
+app.listen(port, ()=>{
+    console.log("server on port ", `${port}`)
+});
+app.use(express.json());
